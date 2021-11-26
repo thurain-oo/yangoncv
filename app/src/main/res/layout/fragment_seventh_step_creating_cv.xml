@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.SeventhStepCreatingCvFragment">
+    <data   >
+        <variable
+            name="seventhStepFragment"
+            type="com.sandboxygn.yangoncv.ui.SeventhStepCreatingCvFragment" />
+        <variable
+            name="sharedViewModel"
+            type="com.sandboxygn.yangoncv.model.CvViewModel" />
+    </data>
+
+    <ScrollView  android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/work_experience"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:gravity="top|start"
+                android:id="@+id/edit_experience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/purple_500"
+                android:hint="eg.Junior Network Engineer for 2 yrs at Something Co.Ltd.,\nCashier for 1 year at Sky Mart"
+                android:lines="4"
+                android:text="@{sharedViewModel.workExp}"
+                android:maxLines="7"
+                android:minLines="4"
+                app:layout_constraintEnd_toEndOf="@+id/exp"
+                app:layout_constraintStart_toStartOf="@+id/exp"
+                app:layout_constraintTop_toBottomOf="@+id/exp"
+                android:inputType="textMultiLine"
+                android:importantForAutofill="no" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@+id/edit_experience"
+                app:layout_constraintStart_toStartOf="@+id/edit_experience"
+                app:layout_constraintTop_toBottomOf="@+id/edit_experience"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="32dp"
+                android:adjustViewBounds="true"
+                android:onClick="@{()->seventhStepFragment.pickAnImage()}"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_view_placeholder"
+                app:layout_constraintBottom_toTopOf="@+id/divider2"
+                app:layout_constraintDimensionRatio="35:45"
+                app:layout_constraintEnd_toEndOf="@+id/edit_experience"
+                app:layout_constraintStart_toStartOf="@+id/edit_experience"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                android:contentDescription="@string/choose_your_cv_profile_image_here" />
+
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@+id/edit_experience"
+                app:layout_constraintStart_toStartOf="@+id/edit_experience"
+                app:layout_constraintTop_toBottomOf="@+id/image_view"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btn_cancel2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cancel"
+                android:onClick="@{()->seventhStepFragment.cancelCreatingCv()}"
+                style="?attr/materialButtonOutlinedStyle"
+
+                app:layout_constraintEnd_toStartOf="@+id/btn_next2"
+                app:layout_constraintStart_toStartOf="@+id/edit_experience"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <Button
+                android:id="@+id/btn_next2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:onClick="@{()->seventhStepFragment.goToNextStep()}"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancel2"
+                app:layout_constraintEnd_toEndOf="@id/edit_experience"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel2"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancel2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

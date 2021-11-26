@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sandboxygn.yangoncv.ui.HomeFragment"
+        android:label="Yangon CV"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_firstStepCreatingCvFragment"
+            app:destination="@id/firstStepCreatingCvFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.FirstStepCreatingCvFragment"
+        android:label="Step 1 of 7 Creating CV"
+        tools:layout="@layout/fragment_first_step_creating_cv" >
+        <action
+            android:id="@+id/action_firstStepCreatingCvFragment_to_secondStepCreatingCvFragment"
+            app:destination="@id/secondStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_firstStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.SecondStepCreatingCvFragment"
+        android:label="Step 2 of 7 Creating CV"
+        tools:layout="@layout/fragment_second_step_creating_cv" >
+        <action
+            android:id="@+id/action_secondStepCreatingCvFragment_to_thirdStepCreatingCvFragment"
+            app:destination="@id/thirdStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_secondStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.ThirdStepCreatingCvFragment"
+        android:label="Step 3 of 7 Creating CV"
+        tools:layout="@layout/fragment_third_step_creating_cv" >
+        <action
+            android:id="@+id/action_thirdStepCreatingCvFragment_to_fourthStepCreatingCvFragment"
+            app:destination="@id/fourthStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_thirdStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/fourthStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.FourthStepCreatingCvFragment"
+        android:label="Step 4 of 7 Creating CV"
+        tools:layout="@layout/fragment_fourth_step_creating_cv" >
+        <action
+            android:id="@+id/action_fourthStepCreatingCvFragment_to_fifthStepCreatingCvFragment"
+            app:destination="@id/fifthStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_fourthStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.FifthStepCreatingCvFragment"
+        android:label="Step 5 of 7 Creating CV"
+        tools:layout="@layout/fragment_fifth_step_creating_cv" >
+        <action
+            android:id="@+id/action_fifthStepCreatingCvFragment_to_sixthStepCreatingCvFragment"
+            app:destination="@id/sixthStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_fifthStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixthStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.SixthStepCreatingCvFragment"
+        android:label="Step 6 of 7 Creating CV"
+        tools:layout="@layout/fragment_sixth_step_creating_cv" >
+        <action
+            android:id="@+id/action_sixthStepCreatingCvFragment_to_seventhStepCreatingCvFragment"
+            app:destination="@id/seventhStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_sixthStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seventhStepCreatingCvFragment"
+        android:name="com.sandboxygn.yangoncv.ui.SeventhStepCreatingCvFragment"
+        android:label="Step 7 of 7 Creating CV"
+        tools:layout="@layout/fragment_seventh_step_creating_cv" >
+        <action
+            android:id="@+id/action_seventhStepCreatingCvFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_seventhStepCreatingCvFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.sandboxygn.yangoncv.ui.SummaryFragment"
+        android:label="CV Summary"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_summaryFragment_to_cvListFragment"
+            app:destination="@id/cvListFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/cvListFragment"
+        android:name="com.sandboxygn.yangoncv.ui.CvListFragment"
+        android:label="fragment_cv_list"
+        tools:layout="@layout/fragment_cv_list" />
+</navigation>

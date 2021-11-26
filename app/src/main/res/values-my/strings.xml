@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ရန်ကုန်-CV</string>
+    <string name="create_cv">CV အသစ်တစ်ခုကိုဖန်တီးပါ</string>
+    <string name="name">နာမည်</string>
+    <string name="parents_name">မိဘများ၏အမည်</string>
+    <string name="date_of_birth">မွေးနေ့</string>
+    <string name="race">လူမျိုးစု</string>
+    <string name="nationality">နိုင်ငံသား</string>
+    <string name="religion">ဘာသာရေး</string>
+    <string name="please_check_all_the_information_is_correct">သတင်းအချက်အလက်အားလုံး မှန်ကန်ကြောင်း ကျေးဇူးပြု၍ စစ်ဆေးပါ</string>
+    <string name="profile_picture">ကိုယ်ရေးရာဇဝင်ရုပ်ပုံ</string>
+    <string name="nrc_no">မှတ်ပုံတင်နံပါတ်</string>
+    <string name="sex">ကျားမ</string>
+    <string name="martial_status">အိမ်ထောင်ရေးအခြေအနေ</string>
+    <string name="weight">ပေါင် အလေးချိန်</string>
+    <string name="height">အရပ်အမြင့်</string>
+    <string name="you_didn_t_choose_any_image">မည်သည့်ပုံရိပ်ကိုမျှ သင်ရွေးချယ်ထားခြင်းရှိပါ။</string>
+    <string name="phone_no">ဖုန်း နံပါတ်</string>
+    <string name="expected_salary">မျှော်မှန်းလစာ</string>
+    <string name="contact_address">ဆက်သွယ်ရန်လိပ်စာ</string>
+    <string name="email_address">အီးမေးလ် လိပ်စာ</string>
+    <string name="work_experience">အလုပ်အတွေ့အကြုံ</string>
+    <string name="choose_your_cv_profile_image_here">သင့် CV Profile ရုပ်ပုံကို ဒီမှာရွေးပါ။</string>
+    <string name="language">ဘာသာစကား</string>
+    <string name="next">ရှေ့ဆက်ရန်</string>
+    <string name="cancel">မလုပ်တေ့ာပါ</string>
+    <string name="myanmar">မြန်မာစာ</string>
+    <string name="english">English</string>
+    <string name="thai">ထိုင်းစာ</string>
+    <string name="japanese">ဂျပန်စာ</string>
+    <string name="chinese">တရုတ်စာ</string>
+    <string name="Myanmar">Myanmar</string>
+    <string name="English">English</string>
+    <string name="Thai">Thai</string>
+    <string name="Japanese">Japanese</string>
+    <string name="Chinese">Chinese</string>
+    <string name="skill_level">ကျွမ်းကျင်မှုအဆင့်</string>
+    <string name="another_language">အခြားဘာသာစကား</string>
+    <string name="educational_qualification">ပညာရေးအရည်အချင်း</string>
+    <string name="achievements_and_certificates">အောင်မြင်မှုများနှင့် လက်မှတ်များ</string>
+</resources>

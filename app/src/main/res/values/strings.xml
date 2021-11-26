@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">YangonCV</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="create_cv">Create CV</string>
+    <string name="name">Name</string>
+    <string name="parents_name">Parents\' Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="race">Ethinic</string>
+    <string name="nationality">Nationality</string>
+    <string name="religion">Religion</string>
+    <string name="please_check_all_the_information_is_correct">Please Check all the information is correct</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="nrc_no">NRC No.</string>
+    <string name="sex">Gender</string>
+    <string name="martial_status">Marital Status</string>
+    <string name="weight">Weight in pounds</string>
+    <string name="height">Height</string>
+    <string name="you_didn_t_choose_any_image">You didn\'t choose any image.</string>
+    <string name="phone_no">Phone No</string>
+    <string name="expected_salary">Expected Salary</string>
+    <string name="contact_address">Contact Address</string>
+    <string name="email_address">Email Address</string>
+    <string name="work_experience">Work Experience</string>
+
+    <string name="choose_your_cv_profile_image_here">Choose Your CV Profile Image Here.</string>
+    <string name="language">Language</string>
+    <string name="Myanmar">Myanmar</string>
+    <string name="English">English</string>
+    <string name="Thai">Thai</string>
+    <string name="Japanese">Japanese</string>
+    <string name="Chinese">Chinese</string>
+    <string name="myanmar">Myanmar</string>
+    <string name="english">English</string>
+    <string name="thai">Thai</string>
+    <string name="japanese">Japanese</string>
+    <string name="chinese">Chinese</string>
+    <string name="skill_level">Skill Level</string>
+    <string name="another_language">Another Language</string>
+    <string name="educational_qualification">Educational Qualification</string>
+    <string name="achievements_and_certificates">Achievements and Certificates</string>
+
+    <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+
+    <string-array name="burmese_skill_set">
+        <item>Native Language</item>
+    </string-array>
+
+    <string-array name="eng_skill_set">
+        <item>Beginner Level</item>
+        <item>Intermediate Level</item>
+        <item>Conversational Level</item>
+        <item>Expert Level</item>
+    </string-array>
+
+    <string-array name="japanese_skill_set">
+        <item>N5</item>
+        <item>N4</item>
+        <item>N3</item>
+        <item>N2</item>
+        <item>N1</item>
+    </string-array>
+
+    <string-array name="chinese_skill_set">
+        <item>Beginner Level</item>
+        <item>Intermediate Level</item>
+        <item>Conversational Level</item>
+        <item>Expert Level</item>
+    </string-array>
+
+    <string-array name="thai_skill_set">
+        <item>Beginner Level</item>
+        <item>Intermediate Level</item>
+        <item>Conversational Level</item>
+        <item>Expert Level</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

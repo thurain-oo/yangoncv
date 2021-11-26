@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".ui.SecondStepCreatingCvFragment">
+
+    <data>
+
+        <variable
+            name="secondStepFragment"
+            type="com.sandboxygn.yangoncv.ui.SecondStepCreatingCvFragment" />
+        <variable
+            name="sharedViewModel"
+            type="com.sandboxygn.yangoncv.model.CvViewModel" />
+    </data>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="22dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/race"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/race"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_race"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{sharedViewModel.race}"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/nationality"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/race">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{sharedViewModel.nrcNo}"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nrc_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/nrc_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nationality">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nrc_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@{sharedViewModel.nrcNo}"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nrc_no"
+                tools:ignore="MissingConstraints" />
+
+
+            <Button
+                android:id="@+id/btn_cancel2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cancel"
+                style="?attr/materialButtonOutlinedStyle"
+
+                android:onClick="@{()->secondStepFragment.cancelCreatingCv()}"
+                app:layout_constraintEnd_toStartOf="@+id/btn_next2"
+                app:layout_constraintStart_toStartOf="@+id/nrc_no"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <Button
+                android:id="@+id/btn_next2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/next"
+                android:onClick="@{()->secondStepFragment.goToNextStep()}"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancel2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel2"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancel2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

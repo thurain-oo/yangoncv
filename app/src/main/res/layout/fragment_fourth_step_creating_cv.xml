@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.FourthStepCreatingCvFragment"
+
+    >
+
+    <data>
+
+        <variable
+            name="fourthStepFragment"
+            type="com.sandboxygn.yangoncv.ui.FourthStepCreatingCvFragment" />
+
+        <variable
+            name="sharedViewModel"
+            type="com.sandboxygn.yangoncv.model.CvViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/language"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox_myanmar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/skill_level"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox_myanmar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkbox_myanmar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="@{sharedViewModel.skilledLangs.contains(@string/Myanmar)}"
+                android:onClick="@{()->fourthStepFragment.addLangSkill()}"
+                android:text="@string/myanmar"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_myanmar"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <CheckBox
+                android:id="@+id/checkBox_english"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="@{sharedViewModel.skilledLangs.contains(@string/English)}"
+                android:onClick="@{()->fourthStepFragment.addLangSkill()}"
+                android:text="@string/english"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_english"
+                app:layout_constraintStart_toStartOf="@+id/checkbox_myanmar"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_myanmar" />
+
+            <Spinner
+                android:visibility="invisible"
+                android:id="@+id/spinner_myanmar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_myanmar"
+                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_myanmar"
+                app:layout_constraintTop_toTopOf="@+id/checkbox_myanmar" />
+
+            <Spinner
+                android:visibility="invisible"
+                android:id="@+id/spinner_english"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/checkBox_english"
+                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/checkBox_english"
+                app:layout_constraintTop_toTopOf="@+id/checkBox_english" />
+
+            <CheckBox
+                android:id="@+id/checkbox_thai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="@{sharedViewModel.skilledLangs.contains(@string/Thai)}"
+                android:onClick="@{()->fourthStepFragment.addLangSkill()}"
+                android:text="@string/thai"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_thai"
+                app:layout_constraintStart_toStartOf="@+id/checkBox_english"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox_english" />
+
+            <CheckBox
+                android:id="@+id/checkbox_japanese"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="@{sharedViewModel.skilledLangs.contains(@string/Japanese)}"
+                android:onClick="@{()->fourthStepFragment.addLangSkill()}"
+                android:text="@string/japanese"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_japanese"
+                app:layout_constraintStart_toStartOf="@+id/checkbox_thai"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_thai" />
+
+            <CheckBox
+                android:id="@+id/checkbox_chinese"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="@{sharedViewModel.skilledLangs.contains(@string/Chinese)}"
+                android:onClick="@{()->fourthStepFragment.addLangSkill()}"
+                android:text="@string/chinese"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_chinese"
+                app:layout_constraintStart_toStartOf="@+id/checkbox_japanese"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_japanese" />
+
+            <EditText
+                android:id="@+id/edit_another_lang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/another_language"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/edit_add_on_skill_level"
+                app:layout_constraintStart_toStartOf="@+id/checkbox_chinese"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_chinese" />
+
+            <Spinner
+                android:visibility="invisible"
+                android:id="@+id/spinner_thai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_thai"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_english"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_thai"
+                app:layout_constraintTop_toTopOf="@+id/checkbox_thai" />
+
+            <Spinner
+                android:visibility="invisible"
+                android:id="@+id/spinner_japanese"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_japanese"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_thai"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_japanese"
+                app:layout_constraintTop_toTopOf="@+id/checkbox_japanese" />
+
+            <Spinner
+                android:visibility="invisible"
+
+                android:id="@+id/spinner_chinese"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_chinese"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_japanese"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_chinese"
+                app:layout_constraintTop_toTopOf="@+id/checkbox_chinese" />
+
+            <EditText
+                android:id="@+id/edit_add_on_skill_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/skill_level"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_another_lang"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_chinese"
+                app:layout_constraintStart_toEndOf="@+id/edit_another_lang"
+                app:layout_constraintTop_toTopOf="@+id/edit_another_lang" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="@+id/edit_add_on_skill_level"
+                app:layout_constraintStart_toStartOf="@+id/edit_another_lang"
+                app:layout_constraintTop_toBottomOf="@+id/edit_another_lang"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cancel"
+                style="?attr/materialButtonOutlinedStyle"
+
+                android:onClick="@{()->fourthStepFragment.cancelCreatingCv()}"
+                app:layout_constraintEnd_toStartOf="@+id/btn_next"
+                app:layout_constraintStart_toStartOf="@+id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:onClick="@{()->fourthStepFragment.goToNextStep()}"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
+                app:layout_constraintEnd_toEndOf="@+id/divider"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

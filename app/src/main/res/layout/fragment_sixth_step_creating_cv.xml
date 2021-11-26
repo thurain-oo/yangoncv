@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout tools:context=".ui.SixthStepCreatingCvFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data >
+        <variable
+            name="sixthStepFragment"
+            type="com.sandboxygn.yangoncv.ui.SixthStepCreatingCvFragment" />
+        <variable
+            name="sharedViewModel"
+            type="com.sandboxygn.yangoncv.model.CvViewModel" />
+    </data>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/expected_salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/expected_salary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_expected_salary"
+                    android:layout_width="match_parent"
+                    android:text="@{sharedViewModel.expectedSalary}"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contact_address"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/contact_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/expected_salary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_address"
+                    android:layout_width="match_parent"
+                    android:text="@{sharedViewModel.contactAddress}"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/phone_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contact_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_phone_no"
+                    android:layout_width="match_parent"
+                    android:text="@{sharedViewModel.phoneNo}"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/email_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone_no">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_email_add"
+                    android:layout_width="match_parent"
+                    android:text="@{sharedViewModel.email}"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                tools:ignore="MissingConstraints" />
+
+
+            <Button
+                android:id="@+id/btn_cancel2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cancel"
+                android:onClick="@{()->sixthStepFragment.cancelCreatingCv()}"
+                style="?attr/materialButtonOutlinedStyle"
+
+                app:layout_constraintEnd_toStartOf="@+id/btn_next2"
+                app:layout_constraintStart_toStartOf="@+id/email"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <Button
+                android:id="@+id/btn_next2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/next"
+                android:onClick="@{()->sixthStepFragment.goToNextStep()}"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancel2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel2"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancel2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

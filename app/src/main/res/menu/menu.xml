@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+ <item
+     android:id="@+id/language"
+     android:icon="@drawable/ic_baseline_language_24"
+     app:showAsAction="always"
+     android:title="language" >
+     <menu>
+         <item android:id="@+id/menu_burmese"
+             android:title="မြန်မာစာ"
+             android:icon="@drawable/myanmarflag"
+             />
+         <item android:id="@+id/menu_english"
+             android:title="US/English"
+             android:icon="@drawable/usaflag"
+             />
+     </menu>
+ </item>
+    <item
+        android:id="@+id/menu_about_us"
+        android:title="About Us"
+        />
+    <item
+        android:id="@+id/menu_contact_us"
+        android:title= "Contact Us"/>
+
+
+</menu>

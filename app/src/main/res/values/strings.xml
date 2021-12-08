@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">YangonCV</string>
     <!-- TODO: Remove or change this placeholder text -->
-
-
+    <string name="sample_intenstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="real_intenstitial_">ca-app-pub-2678792119822785/4255747739</string>
     <string name="create_cv">Create CV</string>
     <string name="name">Name</string>
     <string name="parents_name">Parents\' Name</string>

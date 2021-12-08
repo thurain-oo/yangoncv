@@ -24,6 +24,8 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.OnUserEarnedRewardListener
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
@@ -39,7 +41,7 @@ class SummaryFragment : Fragment() {
     private lateinit var scaledBitmap: Bitmap
     private lateinit var binding: FragmentSummaryBinding
     private val sharedViewModel: CvViewModel by activityViewModels()
-
+    private var mInterstitialAd: InterstitialAd? = null
     private var mRewardedAd: RewardedAd? = null
     private final var TAG = "SummaryFragment"
     private lateinit var adRequest : AdRequest
@@ -50,19 +52,10 @@ class SummaryFragment : Fragment() {
     ): View {
 
         //AD
+
         //Reward AD
          adRequest = AdRequest.Builder().build()
-        RewardedAd.load(context,"ca-app-pub-2678792119822785/1327381815", adRequest, object : RewardedAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                Log.d(TAG, adError?.message)
-                mRewardedAd = null
-            }
 
-            override fun onAdLoaded(rewardedAd: RewardedAd) {
-                Log.d(TAG, "Ad was loaded.")
-                mRewardedAd = rewardedAd
-            }
-        })
 
         binding = FragmentSummaryBinding.inflate(inflater, container, false)
         bitmap = MediaStore.Images.Media.getBitmap(
@@ -104,11 +97,13 @@ class SummaryFragment : Fragment() {
                 .show()
             requestStoragePermission()
         } else {
-            showRewardAD()
-         /*   createCv()*/
-        }
+          //  showRewardAD()
+            createCv()
 
-        // findNavController().navigate(R.id.action_summaryFragment_to_cvListFragment)
+
+        }
+        showInterstitialAd()
+         findNavController().navigate(R.id.action_summaryFragment_to_pdfViewerFragment)
     }
 
     // checking storage permissions
@@ -506,43 +501,39 @@ class SummaryFragment : Fragment() {
         findNavController().navigate(R.id.action_summaryFragment_to_homeFragment)
     }
 
+    fun showInterstitialAd(){
+        //Interstitial
+        InterstitialAd.load(context,getString(R.string.real_intenstitial_), adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d(TAG, adError?.message)
+                mInterstitialAd = null
+            }
 
-    fun showRewardAD(){
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+        })
 
-
-        mRewardedAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
-            override fun onAdShowedFullScreenContent() {
-                // Called when ad is shown.
-                Toast.makeText(context,"Watch the video till the end to get the CV.",Toast.LENGTH_LONG).show()
-                Log.d(TAG, "Ad was shown.")
+        mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                Log.d(TAG, "Ad was dismissed.")
             }
 
             override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
-                // Called when ad fails to show.
                 Log.d(TAG, "Ad failed to show.")
             }
 
-            override fun onAdDismissedFullScreenContent() {
-                // Called when ad is dismissed.
-                // Set the ad reference to null so you don't show the ad a second time.
-                Log.d(TAG, "Ad was dismissed.")
-              //  mRewardedAd = null
+            override fun onAdShowedFullScreenContent() {
+                Log.d(TAG, "Ad showed fullscreen content.")
+                mInterstitialAd = null
             }
         }
 
-        if (mRewardedAd != null) {
-            mRewardedAd?.show(this.activity, OnUserEarnedRewardListener() {
-                fun onUserEarnedReward(rewardItem: RewardItem) {
-
-                    createCv()
-                    findNavController().navigate(R.id.action_summaryFragment_to_pdfViewerFragment)
-
-                    Log.d(TAG, "User earned the reward.")
-                }
-            })
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this.activity)
         } else {
-            Toast.makeText(context,"Watch the video till the end to get the CV.",Toast.LENGTH_LONG).show()
-            Log.d(TAG, "The rewarded ad wasn't ready yet.")
+            Log.d("TAG", "The interstitial ad wasn't ready yet.")
         }
     }
 

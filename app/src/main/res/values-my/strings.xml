@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ရန်ကုန်-CV</string>
+
+    <string name="real_intenstitial_">ca-app-pub-2678792119822785/4255747739</string>
+    <string name="sample_intenstitial">ca-app-pub-3940256099942544/1033173712</string>
+
     <string name="create_cv">CV အသစ်တစ်ခုကိုဖန်တီးပါ</string>
     <string name="name">နာမည်</string>
     <string name="parents_name">မိဘများ၏အမည်</string>

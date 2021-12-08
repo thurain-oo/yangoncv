@@ -13,12 +13,11 @@
             type="com.sandboxygn.yangoncv.model.CvViewModel"/>
     </data>
 
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="22dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -81,43 +80,116 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/weight"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:hint="@string/weight"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/text_pound"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/martial_status">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_weight"
                     android:layout_width="match_parent"
-                    android:text="@{sharedViewModel.weight.toString()}"
-                    android:layout_height="wrap_content"
+                    android:layout_height="61dp"
                     android:inputType="text"
-                    android:lineSpacingMultiplier="10" />
+                    android:lineSpacingMultiplier="10"
+
+                    android:text="@{sharedViewModel.weight.toString()}" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_pound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/pound"
+                app:layout_constraintBottom_toBottomOf="@id/weight"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:elegantTextHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/weight"
+                app:layout_constraintTop_toTopOf="@id/weight" />
+
+            <TextView
+                android:id="@+id/text_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:elegantTextHeight="true"
+                android:text="@string/height"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintStart_toStartOf="@+id/height"
+                app:layout_constraintTop_toBottomOf="@+id/weight" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/height"
-
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:hint="@string/height"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="@string/hint_height_feet"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weight">
+                app:layout_constraintTop_toBottomOf="@+id/text_height">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_height"
+                    android:id="@+id/edit_height_foot"
                     android:layout_width="match_parent"
-                    android:text="@{sharedViewModel.height}"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:lineSpacingMultiplier="10" />
+                    android:lineSpacingMultiplier="10"
+                    android:text="@{sharedViewModel.feet}" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/text_height_feet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:elegantTextHeight="true"
+                android:singleLine="true"
+                android:text="@string/height_feet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/height"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/height"
+                app:layout_constraintTop_toTopOf="@+id/height" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/height_inches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:hint="@string/hint_height_inches"
+
+                app:layout_constraintBottom_toBottomOf="@+id/height"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/text_height_feet"
+                app:layout_constraintTop_toTopOf="@+id/height">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_height_inches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:lineSpacingMultiplier="10"
+                    android:text="@{sharedViewModel.inches}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/text_height_inches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:elegantTextHeight="true"
+                android:text="@string/height_iches"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/height"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/height_inches"
+                app:layout_constraintTop_toTopOf="@+id/height" />
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
@@ -156,6 +228,17 @@
                 app:layout_constraintTop_toTopOf="@+id/btn_cancel2" />
 
 
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-2678792119822785/5495348226"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 </layout>

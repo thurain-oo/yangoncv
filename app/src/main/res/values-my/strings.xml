@@ -39,4 +39,13 @@
     <string name="another_language">အခြားဘာသာစကား</string>
     <string name="educational_qualification">ပညာရေးအရည်အချင်း</string>
     <string name="achievements_and_certificates">အောင်မြင်မှုများနှင့် လက်မှတ်များ</string>
+    <string name="check_my_cvs">ကျွန်ုပ်ရဲ့ CV စာရင်း</string>
+    <string name="give_an_advice">အကြံဉာဏ်ပေးပါ</string>
+    <string name="pound">ပေါင်</string>
+    <string name="height_feet">ပေ -</string>
+    <string name="hint_height_inches">လက်မအမြင့်</string>
+    <string name="height_iches">လက်မ</string>
+    <string name="hint_height_feet" >ပေအမြင့်</string>
+    <string name="formatted_height">%s ‌ပေ - %s လက်မ </string>
+    <string name="formatted_weight">%s ပေါင်</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
 import com.sandboxygn.yangoncv.R
 import com.sandboxygn.yangoncv.databinding.FragmentFourthStepCreatingCvBinding
 import com.sandboxygn.yangoncv.model.CvViewModel
@@ -35,9 +36,13 @@ class FourthStepCreatingCvFragment : Fragment() {
         binding.spinnerChinese.adapter= ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,chineseSkillSet)
         binding.spinnerJapanese.adapter= ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,japaneseSkillSet)
         binding.spinnerThai.adapter= ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,thaiSkillSet)
+
+
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
         // Inflate the layout for this fragment
-
-
         return binding.root
     }
 
@@ -53,9 +58,6 @@ class FourthStepCreatingCvFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
     }
-
-
-
 
     fun addLangSkill() {
         //Japanese
@@ -106,14 +108,26 @@ class FourthStepCreatingCvFragment : Fragment() {
             binding.spinnerEnglish.isVisible = false
             sharedViewModel.skilledLangs.remove("English")
         }
+
+
         }
 
     fun goToNextStep() {
      //   setUncheckedSpinnersInvisibleOnNextVisit()
-        if (sharedViewModel.skilledLangs.isEmpty()) {
-            Toast.makeText(context,"You didn't choose any language as skill.",Toast.LENGTH_LONG).show()
+        sharedViewModel.setAddOnLang(binding.editAddOnSkillLevel.text.toString())
+        sharedViewModel.setAddOnLangSkill(binding.editAddOnSkillLevel.text.toString())
+
+        if (sharedViewModel.skilledLangs.isEmpty() && binding.editAnotherLang.text.toString() == "") {
+
+                Toast.makeText(
+                    context,
+                    "You didn't choose any language as skill.",
+                    Toast.LENGTH_LONG
+                ).show()
             sharedViewModel.skilledLangsString = ""
         } else {
+            sharedViewModel.setAddOnLang(binding.editAnotherLang.text.toString())
+            sharedViewModel.setAddOnLangSkill(binding.editAddOnSkillLevel.text.toString())
             editSkillLangs()
             sharedViewModel.skilledLangsString = sharedViewModel.skilledLangsEdited.distinct().sorted().joinToString(separator = ", \n")
         }
@@ -135,6 +149,10 @@ class FourthStepCreatingCvFragment : Fragment() {
         if(sharedViewModel.skilledLangs.contains("Chinese") && !sharedViewModel.skilledLangsEdited.contains("Chinese"))
             sharedViewModel.skilledLangsEdited.add( "Chinese \t-\t"+binding.spinnerChinese.selectedItem.toString())
 
+
+        if(sharedViewModel.addOnLang.value != ""){
+            sharedViewModel.skilledLangsEdited.add(sharedViewModel.addOnLang.value.toString()+" \t-\t"+sharedViewModel.addOnLangSkill.value.toString())
+        }
 
     }
 

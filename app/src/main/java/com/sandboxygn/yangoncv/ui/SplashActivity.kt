@@ -11,6 +11,7 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.gms.ads.MobileAds
 
 
 /**
@@ -29,6 +30,8 @@ class SplashActivity : AppCompatActivity() {
         makeFullScreen()
 
         setContentView(R.layout.activity_splash)
+
+        MobileAds.initialize(this)
 
         // Using a handler to delay loading the MainActivityOriginal
         handler = Handler(Looper.getMainLooper())

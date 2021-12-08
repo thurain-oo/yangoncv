@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.PdfViewerFragment">
+    <data>
+        <variable
+            name="sharedViewModel"
+            type="com.sandboxygn.yangoncv.model.CvViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/light_green"
+        android:layout_height="match_parent">
+
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdf_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/text_path_of_cv"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:id="@+id/text_path_of_cv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/text_path_of_cv"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:scrollHorizontally="true"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:text="Place for path of CV" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:adSize="LARGE_BANNER"
+            app:adUnitId="ca-app-pub-2678792119822785/3032836418" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_share_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/pdf_view"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="120dp"
+            android:maxHeight="35dp"
+            android:src="@drawable/ic_baseline_share_24" />
+
+    </RelativeLayout>
+</layout>

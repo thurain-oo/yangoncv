@@ -32,6 +32,7 @@ import android.content.Context
 
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
+import com.google.android.gms.ads.AdRequest
 
 
 class SeventhStepCreatingCvFragment : Fragment() {
@@ -73,6 +74,7 @@ class SeventhStepCreatingCvFragment : Fragment() {
 
         //https://www.youtube.com/watch?v=ATj6tq5HQZU
         cropImageResultLauncher = registerForActivityResult(cropImageSActivityResultContract) {
+
             it?.let { uri ->
                 sharedViewModel.setProfileImage(uri)
                 binding.imageView.setImageURI(uri)
@@ -88,6 +90,9 @@ class SeventhStepCreatingCvFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSeventhStepCreatingCvBinding.inflate(inflater, container, false)
 
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
 
 
         return binding.root
@@ -125,7 +130,7 @@ class SeventhStepCreatingCvFragment : Fragment() {
         if (checkPermission() == false) {
             Toast.makeText(
                 context,
-                "Please Allow Camera and Storage Permissions.",
+               "Please Allow Camera and Storage Permissions.",
                 Toast.LENGTH_SHORT
             ).show()
 

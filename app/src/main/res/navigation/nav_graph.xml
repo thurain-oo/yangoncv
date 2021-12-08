@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_firstStepCreatingCvFragment"
             app:destination="@id/firstStepCreatingCvFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cvListFragment"
+            app:destination="@id/cvListFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstStepCreatingCvFragment"
@@ -124,14 +127,29 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_summaryFragment_to_cvListFragment"
-            app:destination="@id/cvListFragment"
+            android:id="@+id/action_summaryFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/cvListFragment"
         android:name="com.sandboxygn.yangoncv.ui.CvListFragment"
-        android:label="fragment_cv_list"
-        tools:layout="@layout/fragment_cv_list" />
+        android:label="Lists of CVs you created!"
+        tools:layout="@layout/fragment_cv_list" >
+        <action
+            android:id="@+id/action_cvListFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pdfViewerFragment"
+        android:name="com.sandboxygn.yangoncv.ui.PdfViewerFragment"
+        android:label="PDF View Mode"
+        tools:layout="@layout/fragment_pdf_viewer">
+        <action
+            android:id="@+id/action_pdfViewerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

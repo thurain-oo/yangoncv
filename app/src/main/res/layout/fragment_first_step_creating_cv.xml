@@ -12,12 +12,9 @@
         type="com.sandboxygn.yangoncv.model.CvViewModel" />
 </data>
 
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             tools:context=".ui.FirstStepCreatingCvFragment"
             android:padding="22dp">
 
@@ -117,7 +114,18 @@
                 app:layout_constraintStart_toEndOf="@+id/btn_cancel"
                 app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
 
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="LARGE_BANNER"
+                app:adUnitId="ca-app-pub-2678792119822785/6471897284"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 </layout>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
  <item
      android:id="@+id/language"
-     android:icon="@drawable/ic_baseline_language_24"
+
      app:showAsAction="always"
      android:title="language" >
      <menu>
@@ -18,12 +18,13 @@
      </menu>
  </item>
     <item
+        android:visible="false"
         android:id="@+id/menu_about_us"
         android:title="About Us"
         />
     <item
-        android:id="@+id/menu_contact_us"
-        android:title= "Contact Us"/>
+        android:id="@+id/menu_feedback"
+        android:title= "@string/give_an_advice"/>
 
 
 </menu>

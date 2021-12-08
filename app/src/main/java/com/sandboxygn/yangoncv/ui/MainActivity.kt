@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_main)
+
         ActivityCompat.requestPermissions(
             this,
             arrayOf(

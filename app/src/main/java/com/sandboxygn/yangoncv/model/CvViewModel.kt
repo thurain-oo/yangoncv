@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import java.io.File
 
 class CvViewModel : ViewModel() {
 
@@ -43,13 +44,23 @@ class CvViewModel : ViewModel() {
     val weight: LiveData<String> = _weight
 
 
-    private val _height = MutableLiveData<String>()
-    val height: LiveData<String> = _height
+
+    private val _feet = MutableLiveData<String>()
+    val feet: LiveData<String> = _feet
+    private val _inches = MutableLiveData<String>()
+    val inches: LiveData<String> = _inches
+
 
     //Step 4
     var skilledLangs = mutableListOf<String>()  // is Myanmar checked , English checked? etc..
     var skilledLangsEdited = mutableListOf<String>()  //Skill level added to checked lang
     var skilledLangsString = skilledLangs.joinToString()  //combine list into one long string
+
+    private val _addOnLang = MutableLiveData<String>()
+    val addOnLang : LiveData<String> = _addOnLang
+
+    private val _addOnLangSkill = MutableLiveData<String>()
+    val addOnLangSkill : LiveData<String> = _addOnLangSkill
 
     //Step 5
 
@@ -80,8 +91,10 @@ class CvViewModel : ViewModel() {
     private val _profileImage = MutableLiveData<Uri?>()
     val profileImage : LiveData<Uri?> =_profileImage
 
-    private val _isVisible = MutableLiveData<Boolean>()
-    val isVisible : LiveData<Boolean> = _isVisible
+
+    //Absolute path of pdf file
+    private val _pdfFile = MutableLiveData<String>()
+    val pdfFile : LiveData<String> = _pdfFile
 
 
     init{
@@ -99,9 +112,12 @@ class CvViewModel : ViewModel() {
         _sex.value = ""
         _martialStatus.value = ""
         _weight.value = ""
-        _height.value = ""
+        _feet.value = ""
+        _inches.value=""
         skilledLangs = mutableListOf<String>()
         skilledLangsEdited= mutableListOf<String>()
+        _addOnLang.value=""
+        _addOnLangSkill.value = ""
         _educationalQualification.value=""
         _certificates.value = ""
         _expectedSalary.value = ""
@@ -110,6 +126,7 @@ class CvViewModel : ViewModel() {
         _email.value = ""
         _workExp.value = ""
         _profileImage.value = null
+        _pdfFile.value = ""
 
     }
 
@@ -148,20 +165,32 @@ class CvViewModel : ViewModel() {
     fun setWeight(weight : String){
         _weight.value = weight
     }
-    fun setHeight(height : String){
-        _height.value = height
+    fun setHeightfeet(feet: String){
+        _feet.value = feet
     }
 
-    //Step 4 property setters
+    fun setHeightInches(inches : String){
+        _inches.value = inches
+    }
 
+
+
+    //Step 4 property setters
+    fun setAddOnLang(string : String ){
+        _addOnLang.value = string
+    }
+
+    fun setAddOnLangSkill(string : String){
+        _addOnLangSkill.value  = string
+    }
 
 
     //Step 5 property setters
     fun setEducationalQualification(quilification : String){
-        _educationalQualification.value = quilification
+        _educationalQualification.value = quilification.replace(",\n",",").replace(",",",\n")
     }
     fun setCertificates(certs : String){
-        _certificates.value = certs
+        _certificates.value = certs.replace(",\n",",").replace(",",",\n")
     }
 
     //Step 6 property setters
@@ -180,15 +209,15 @@ class CvViewModel : ViewModel() {
 
     //Step 7 property setters
     fun setWorkExp(experience : String){
-        _workExp.value = experience
+        _workExp.value = experience.replace(",\n",",").replace(",",",\n")
     }
 
     fun setProfileImage(uri: Uri?){
         _profileImage.value = uri
     }
 
-    fun setIsVisible(boolean: Boolean){
-        _isVisible.value = boolean
+    fun setPdfFile(file : String){
+        _pdfFile.value= file
     }
 
 

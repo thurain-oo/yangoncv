@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
 import com.sandboxygn.yangoncv.R
 import com.sandboxygn.yangoncv.databinding.FragmentSecondStepCreatingCvBinding
 import com.sandboxygn.yangoncv.model.CvViewModel
@@ -20,6 +21,11 @@ class SecondStepCreatingCvFragment : Fragment() {
     ): View {
 
         binding = FragmentSecondStepCreatingCvBinding.inflate(inflater,container,false)
+
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
         return binding.root
     }
 

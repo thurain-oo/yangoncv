@@ -306,11 +306,12 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 <TextView
+                    android:id="@+id/text_formatted_weight"
                     android:elegantTextHeight="true"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{sharedViewModel.weight}"
+                    tools:text="110 lbs"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textStyle="bold" />
 
@@ -334,11 +335,11 @@
 
 
                 <TextView
+                    android:id="@+id/text_formatted_height"
                     android:elegantTextHeight="true"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{sharedViewModel.height}"
+                    tools:text="5 feet - 6 inches"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textStyle="bold" />
                 <View
@@ -427,15 +428,7 @@
                     android:background="?dividerHorizontal" />
 
 
-                <View
-                    android:elegantTextHeight="true"
 
-                    android:id="@+id/divider15"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:background="?dividerHorizontal" />
 
                 <TextView
                     android:elegantTextHeight="true"

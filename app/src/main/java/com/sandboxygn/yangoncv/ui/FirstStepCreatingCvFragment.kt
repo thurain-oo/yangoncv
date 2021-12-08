@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
 import com.sandboxygn.yangoncv.R
 import com.sandboxygn.yangoncv.databinding.FragmentFirstStepCreatingCvBinding
 import com.sandboxygn.yangoncv.model.CvViewModel
@@ -22,6 +23,10 @@ class FirstStepCreatingCvFragment : Fragment() {
         setHasOptionsMenu(false) //to hide option menus in fragments except home fragment
         val fragmentFirstStepCreatingCvBinding = FragmentFirstStepCreatingCvBinding.inflate(inflater,container,false  )
         binding = fragmentFirstStepCreatingCvBinding
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
         return binding.root
     }
 
@@ -38,10 +43,6 @@ class FirstStepCreatingCvFragment : Fragment() {
         sharedViewModel.setName(binding.editName.text.toString())
         sharedViewModel.setDateOfBirth(binding.editDateOfBirth.text.toString())
         sharedViewModel.setFatherName(binding.editFatherName.text.toString())
-
-
-        var list : MutableList<String> = mutableListOf()
-        list.add("Helo")
 
         findNavController().navigate(R.id.action_firstStepCreatingCvFragment_to_secondStepCreatingCvFragment)
     }

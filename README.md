@@ -1,5 +1,5 @@
 # yangoncv
-This is the self CV creating tool.
+This is the free self CV creating tool.
 
 -Fill the forms
 

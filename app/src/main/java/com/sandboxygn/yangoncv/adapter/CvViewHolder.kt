@@ -9,4 +9,5 @@ import com.sandboxygn.yangoncv.R
 class CvViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var cvFileName: TextView = itemView.findViewById(R.id.text_pdf_file_name)
     var container: CardView = itemView.findViewById(R.id.card_pdf)
+
 }

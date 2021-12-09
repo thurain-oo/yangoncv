@@ -13,7 +13,10 @@
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/cv_list_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/cv_template_item.xml" value="0.5" />
+        <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_choose_c_v_template.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_cv_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_cv_preview.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_fifth_step_creating_cv.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_first_step_creating_cv.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mrzxc/AndroidStudioProjects/YangonCV/app/src/main/res/layout/fragment_fourth_step_creating_cv.xml" value="0.33" />

@@ -127,10 +127,8 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_summaryFragment_to_pdfViewerFragment"
-            app:destination="@id/pdfViewerFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_summaryFragment_to_chooseCVTemplateFragment"
+            app:destination="@id/chooseCVTemplateFragment" />
     </fragment>
     <fragment
         android:id="@+id/cvListFragment"
@@ -151,5 +149,25 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCVTemplateFragment"
+        android:name="com.sandboxygn.yangoncv.ui.ChooseCVTemplateFragment"
+        android:label="Choose Template"
+        tools:layout="@layout/fragment_choose_c_v_template" >
+        <action
+            android:id="@+id/action_chooseCVTemplateFragment_to_cvPreviewFragment"
+            app:destination="@id/cvPreviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cvPreviewFragment"
+        android:name="com.sandboxygn.yangoncv.ui.CvPreviewFragment"
+        android:label="Preview the CV template"
+        tools:layout="@layout/fragment_cv_preview" >
+        <action
+            android:id="@+id/action_cvPreviewFragment_to_pdfViewerFragment"
+            app:destination="@id/pdfViewerFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

@@ -9,6 +9,7 @@ import java.io.File
 class CvViewModel : ViewModel() {
 
     //Step 1
+
     private val _name = MutableLiveData<String>()
     val name: LiveData<String> = _name
 
@@ -96,6 +97,10 @@ class CvViewModel : ViewModel() {
     private val _pdfFile = MutableLiveData<String>()
     val pdfFile : LiveData<String> = _pdfFile
 
+
+    //Template Choosing Fragment
+    private val _templateType = MutableLiveData<String>()
+    val templateItem : LiveData<String> = _templateType
 
     init{
         resetData()
@@ -220,8 +225,9 @@ class CvViewModel : ViewModel() {
         _pdfFile.value= file
     }
 
-
-
+    fun setTemplateType(string: String) {
+        _templateType.value = string
+    }
 
 
 }

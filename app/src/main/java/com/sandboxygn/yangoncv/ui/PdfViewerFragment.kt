@@ -43,7 +43,7 @@ class PdfViewerFragment : Fragment() {
         binding = FragmentPdfViewerBinding.inflate(inflater, container, false)
 
         binding.pdfView.fromFile(File(sharedViewModel.pdfFile.value)).load()
-        binding.textPathOfCv.text = "PDF location : " + sharedViewModel.pdfFile.value
+        binding.textPathOfCv.text = "Your CV is saved as: " + sharedViewModel.pdfFile.value
 
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)

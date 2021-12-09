@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.sandboxygn.yangoncv.R
+import com.sandboxygn.yangoncv.ui.CvListFragment
 import java.io.File
 
 class CvAdapter(
-    private val context: Context,
+    private val context: CvListFragment,
     private val pdfFiles: List<File>,
     private val listener: OnPdfItemSelectListener
 ) : RecyclerView.Adapter<CvViewHolder>() {

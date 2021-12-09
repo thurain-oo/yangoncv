@@ -80,7 +80,7 @@ class CvListFragment  : Fragment(),OnPdfItemSelectListener  {
     private fun displayPdf(){
          binding.recyclerViewCvList.setHasFixedSize(true)
         cvList= listDirectory(requireActivity().getExternalFilesDir(null)!!)
-        cvAdapter = CvAdapter(requireContext(),cvList,this)
+        cvAdapter = CvAdapter(this,cvList,this)
         binding.recyclerViewCvList.adapter =  cvAdapter
     }
 
